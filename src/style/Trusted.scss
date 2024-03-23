@@ -1,0 +1,34 @@
+.trusted-section {
+	padding: 1rem 0;
+	background-color: rgb(236, 236, 236);
+
+	.trusted-container {
+		padding: 0 15rem;
+
+		.main-slider {
+			text-align: center;
+			font-size: 1rem;
+			color: #541010;
+			margin-bottom: 1rem;
+
+			.brand-section-slider {
+				display: flex;
+				align-items: center;
+				justify-content: space-between;
+				// margin-top: 2rem;
+				// gap: 1rem;
+
+				.slide {
+
+					// background: #a06c6c;
+					img {
+						// min-width: 5rem;
+						width: 8rem;
+						height: auto;
+					}
+				}
+
+			}
+		}
+	}
+}

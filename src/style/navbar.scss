@@ -1,0 +1,254 @@
+header {
+	padding: 0 4.8rem;
+	height: 4rem;
+	background-color: rgb(132, 125, 125);
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	// position: relative;
+	position: fixed;
+	width: 100%;
+	z-index: 9999;
+
+
+	.logo {
+		font-size: 1.7rem;
+	}
+
+	nav {
+		.navbar-lists {
+			display: flex;
+			gap: 4rem;
+			align-items: center;
+			list-style: none;
+			justify-content: center;
+
+			a.active {
+				color: rgb(0, 0, 0);
+			}
+
+			.navbar-link {
+				font-size: 1.2rem;
+
+
+				.user-icon {
+					// color: red;
+				}
+
+				.user-login-name {
+					margin-left: 0.5rem;
+					font-size: 0.9rem;
+				}
+
+				.cart-trolly--link {
+					// background: #000;
+					position: relative;
+
+					.cart-trolly {
+						// color: red;
+						position: relative;
+						font-size: 1.2rem;
+					}
+
+					.cart-total--item {
+						width: 1.2rem;
+						height: 1.2rem;
+						font-size: 1rem;
+						position: absolute;
+						background-color: #f1bdbd;
+						color: #000;
+						border-radius: 50%;
+						display: grid;
+						place-items: center;
+						top: -20%;
+						left: 70%;
+					}
+
+				}
+
+				.btn {
+					padding: 0.5rem 1rem;
+					font-size: 0.9rem;
+					// padding: 0.8rem 1.4rem;
+				}
+
+			}
+
+		}
+
+		.mobile-navbar-btn {
+			display: none;
+			background-color: transparent;
+			cursor: pointer;
+			border: none;
+
+			.mobile-nav-icon[name="close-outline"] {
+				display: none;
+			}
+
+			.close-outline {
+				display: none;
+			}
+		}
+	}
+
+}
+
+
+// for mobile screens
+@media screen and (max-width: 480px) {
+	header {
+		padding: 0 2rem;
+		height: 4rem;
+		background-color: rgb(132, 125, 125);
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		position: fixed;
+
+		.logo {
+			font-size: 1.7rem;
+		}
+
+		nav {
+			.navbar-lists {
+				width: 100vw;
+				height: 100vh;
+				position: absolute;
+				background-size: cover;
+				top: 0;
+				left: 0;
+				background-color: #fff;
+				overflow: hidden;
+
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				flex-direction: column;
+
+				visibility: hidden;
+				opacity: 0;
+				transform: translateX(100%);
+				/* transform-origin: top; */
+				transition: all 0.7s linear;
+
+				a.active {
+					color: rgb(0, 0, 0);
+				}
+
+				.navbar-link {
+					font-size: 1.2rem;
+					color: #000;
+
+
+					.user-icon {
+						// color: red;
+						font-size: 2rem;
+					}
+
+					.user-login-name {
+						// margin-left: 0.5rem;
+						// font-size: 0.9rem;
+						display: none;
+					}
+
+					.cart-trolly--link {
+						// background: #000;
+						position: relative;
+
+						.cart-trolly {
+							// color: red;
+							position: relative;
+							font-size: 2rem;
+						}
+
+						.cart-total--item {
+							width: 1.5rem;
+							height: 1.5rem;
+							font-size: 1.1rem;
+
+						}
+
+					}
+
+					.btn {
+						// padding: 0.5rem 1rem;
+						font-size: 1.5rem;
+						padding: 0.8rem 4rem;
+						background-color: #aa83ff;
+						color: white;
+						border: none;
+					}
+
+					.btn:hover {
+						border: 1px solid #aa83ff;
+						background: transparent;
+						color: #aa83ff;
+					}
+
+
+				}
+
+			}
+
+			.active .navbar-lists {
+				visibility: visible;
+				opacity: 1;
+				transform: translateX(0);
+				z-index: 999;
+				transform-origin: right;
+				transition: all 0.5s linear;
+				gap: 2rem;
+
+				.navbar-link {
+					font-size: 1.5rem;
+				}
+			}
+
+
+			.mobile-navbar-btn {
+				display: inline-block;
+				z-index: 9999;
+				cursor: pointer;
+				border: black;
+
+				.mobile-nav-icon {
+					// display: none;
+					font-size: 1.5rem;
+					color: rgb(255, 255, 255);
+				}
+
+				.active .mobile-nav-icon {
+					display: none;
+					font-size: 4.2rem;
+					position: absolute;
+					top: 30%;
+					right: 10%;
+					color: black;
+					z-index: 9999;
+				}
+
+				.active .close-outline {
+					display: inline-block;
+					visibility: visible;
+					font-size: 2rem;
+					z-index: 9999;
+					color: #000;
+				}
+			}
+		}
+
+	}
+}
+
+// for tablet screens
+@media screen and (min-width:481px) and (max-width:768px) {}
+
+
+// for laptop devices
+@media screen and (min-width:769px) and (max-width:1200px) {}
+
+@media screen and (min-width:1201px) and (max-width:1359px) {}
+
+// for large screen device like desktop.
+@media screen and (min-width:1360px) {}
