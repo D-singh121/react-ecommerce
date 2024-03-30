@@ -1,0 +1,30 @@
+.PrductsPage-section {
+	padding: 2rem;
+	width: 100%;
+	min-height: calc(100vh - 4rem);
+	padding-top: 4rem;
+
+	.products-container {
+		display: grid;
+		grid-template-columns: 0.2fr 1fr;
+		gap: 1rem;
+		background-color: rgb(235, 220, 220);
+
+		.filter-product-Section {
+			padding: 0.2rem;
+			// background-color: #fff;
+			border: 1px solid red;
+		}
+
+		.product-listing--main {
+			border: 1px solid red;
+
+			.sort-filter {}
+
+			.main-product {}
+
+		}
+
+
+	}
+}

@@ -1,0 +1,81 @@
+#product-details--section {
+	padding: 3rem 0;
+
+	.product-details--container {
+		padding: 2rem 4rem;
+
+
+		.grid-two-column {
+			display: grid;
+			grid-template-columns: repeat(2, 1fr);
+			gap: 3rem;
+
+			.product-images {
+				// image part
+			}
+
+			.text-info {
+				background-color: #ffffff;
+				padding: 2rem;
+				display: flex;
+				flex-direction: column;
+				align-items: flex-start;
+				justify-content: center;
+				gap: 0.7rem;
+				// border-bottom: 1px solid black;
+
+				.product-data-price {
+					color: red;
+				}
+
+				.product-data-real-price {
+					color: rgb(27, 20, 220);
+				}
+
+				.product-data-warranty {
+					width: 100%;
+					display: flex;
+					justify-content: space-between;
+					// background-color: #fff;
+					align-items: center;
+					border-bottom: 1px solid #ccc;
+					margin-bottom: 1rem;
+
+					.product-warranty-data {
+						text-align: center;
+
+						// background-color: red;
+						.warranty-icon {
+							background-color: rgba(220, 220, 220, 0.5);
+							border-radius: 50%;
+							width: 3rem;
+							height: 3rem;
+							padding: 0.6rem;
+						}
+
+						p {
+							font-size: 0.9rem;
+							padding: 0.5rem 0;
+						}
+					}
+
+				}
+
+				.product-data-info {
+					display: flex;
+					flex-direction: column;
+					gap: 0.4rem;
+					opacity: 0.9;
+					font-size: 1rem;
+
+					span {
+						font-weight: bold;
+						opacity: 0.8;
+					}
+
+				}
+			}
+		}
+	}
+
+}

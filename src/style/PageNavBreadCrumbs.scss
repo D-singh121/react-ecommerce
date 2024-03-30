@@ -1,0 +1,16 @@
+.bread-crumb--section {
+	height: 5rem;
+	background-color: #f2e7e7;
+	display: flex;
+	justify-content: start;
+	align-items: center;
+	margin-top: 1rem;
+	font-size: 1.3rem;
+	padding: 0 2rem;
+
+	a {
+		color: rgb(50, 109, 228);
+		text-decoration: underline;
+
+	}
+}

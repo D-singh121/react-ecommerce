@@ -1,14 +1,13 @@
 
-const Button = ({ label, type, ...props }) => {
+const Button = ({ label, style, type, ...props }) => {
 	return (
-		<div>
-			<button
-				type={type}
-				{...props}
-			>
-				{label}
-			</button>
-		</div>
+		<button
+			type={type}
+			style={style}
+			{...props}
+		>
+			{label}
+		</button>
 	)
 }
 

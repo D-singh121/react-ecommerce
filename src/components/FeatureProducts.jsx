@@ -5,7 +5,7 @@ import { ProductCard } from "./index.js";
 
 const FeatureProducts = () => {
 	const { isLoading, featureProducts } = useProductContext();  // this is custom hook.
-	console.log(featureProducts);
+	// console.log(featureProducts);
 
 
 	return (
@@ -20,8 +20,8 @@ const FeatureProducts = () => {
 
 				<div className="feature-product-container">
 					{featureProducts && featureProducts.length
-						? featureProducts.map((product) => {
-							return <ProductCard key={product.id} {...product} />
+						? featureProducts.map((curElem) => {
+							return <ProductCard key={curElem.id} {...curElem} />
 						})
 						: null}
 				</div>

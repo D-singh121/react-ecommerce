@@ -1,0 +1,24 @@
+.cart-quantity-main{
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	gap: 1rem;
+	margin: 0.5rem 0;
+
+	p{
+		font-size: 1.1rem;
+	}
+
+	.icon{
+		font-size: 0.8rem;
+		background: transparent;
+	}
+	
+	.cartBtn{
+		border-radius: 50%;
+		padding: 0.1rem;
+		border: none;
+		outline: none;
+		cursor: pointer;
+	}
+}
