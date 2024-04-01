@@ -11,19 +11,19 @@ const ProductDetailsImages = ({ imgs = [{ url: "" }] }) => {
 		<section className='images-container'>
 			<div className="grid grid-four-column">
 				{imgs.map((curElm, index) => {
+					console.log(curElm);
+
 					return (
-						<figure key={index}>
-							<img
-								src={curElm.url}
-								alt={curElm.filename}
-								className="box-image--style"
-								onClick={() => setMainImage(curElm)}
-							/>
-						</figure>
+						<img
+							src={curElm.url}
+							alt={curElm.filename}
+							className="box-image--style"
+							key={index}
+							onClick={() => setMainImage(curElm)}
+						/>
 					);
 				})}
 			</div>
-			{/* 2nd column  */}
 
 			<div className="main-screen">
 				<img src={mainImage.url} alt={mainImage.filename} />

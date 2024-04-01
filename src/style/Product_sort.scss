@@ -1,0 +1,52 @@
+.sort-container {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+
+	margin-top: 2rem;
+	padding: 1rem 2rem;
+
+	.sorting--list-grid {
+		display: flex;
+		gap: 1.2rem;
+
+		.sort-btn {
+			padding: 0.5rem 0.5rem;
+			border: none;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			cursor: pointer;
+
+			.icon {
+				font-size: 1.2rem;
+			}
+
+		}
+
+		.active {
+			background-color: rgb(60, 178, 189);
+			color: #fff;
+		}
+
+
+	}
+
+	.product-data {}
+
+	.sort-selection {
+		// cursor: pointer;
+		.sort-selection--style {
+			outline: none;
+			border: none;
+			padding: 0.3rem;
+			cursor: pointer;
+			border-radius: 5px;
+
+			option {
+				cursor: pointer;
+				background-color: #fff;
+			}
+		}
+	}
+}

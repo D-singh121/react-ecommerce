@@ -1,10 +1,11 @@
 import { ProductCard } from "./index"
 
-const GridViewComp = (products) => {
+const GridViewComp = ({ products }) => {
+	// console.log(products);
 
 	return (
 		<section>
-			<div>
+			<div style={{ padding: " 2rem 2rem", backgroundColor: "#FFF", display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: "1rem" }}>
 				{
 					products && products.length > 0
 						? (products.map((currElem) => {

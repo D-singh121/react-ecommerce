@@ -13,14 +13,16 @@ const singleProductApi = "https://api.pujakaitem.com/api/products"
 
 
 const ProductDetails = () => {
-	const { id } = useParams()
 	const { isSingleProductLoading, isError, singleProduct, getSIngleProduct } = useProductContext()
 
-	const { name, price, reviews, stars, stock, description, company, colors, category, image } = singleProduct;
+	const { id } = useParams()
+
+	const { id: alias, name, price, reviews, stars, stock, description, company, image } = singleProduct;
 
 
 	useEffect(() => {
-		getSIngleProduct(`${singleProductApi}/${id}`);
+		getSIngleProduct(`${singleProductApi}?id=${id}`);
+		// getSIngleProduct(`${singleProductApi}/${id}`);
 
 	}, [])
 
@@ -32,7 +34,7 @@ const ProductDetails = () => {
 
 	{ isError && <p>Some error occured ... </p> }
 
-	console.log(singleProduct);
+	// console.log(singleProduct);
 
 	return (
 		<section id="product-details--section">
