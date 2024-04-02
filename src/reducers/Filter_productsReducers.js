@@ -21,43 +21,40 @@ const FilterProductsReducer = (state, action) => {
 
 		// get sort value when click on select option
 		case "GET_SORT_VALUE":
-			let userSortValue = document.getElementById("sort");
-			let sort_value = userSortValue.options[userSortValue.selectedIndex].value;
-			console.log(sort_value);
+			// let userSortValue = document.getElementById("sort");
+			// let sort_value = userSortValue.options[userSortValue.selectedIndex].value;
+			// console.log(sort_value);
 
 			return {
 				...state,
-				sorting_value: sort_value
+				// sorting_value: sort_value
+				sorting_value: action.payload, // by using the event method
 			};
 
 		// all sort methods 
 		case "SORTING_PRODUCTS":
-			let newSortData;
-			let tempSortProduct = [...action.payload];
+			const { filter_products, sorting_value } = state; // destructering state.
+			let tempSortProduct = [...filter_products];  // shallow copy of filter_products
 
-			if (state.sorting_value === "a-z") {
-				newSortData = tempSortProduct.sort((a, b) => {
-					return a.name.localeCompare(b.name)
-				});
-			}
-
-			if (state.sorting_value === "z-a") {
-				newSortData = tempSortProduct.sort((a, b) => {
-					return b.name.localeCompare(a.name)
-				});
-			}
-
-			if (state.sorting_value === "lowest-price") {
-				newSortData = tempSortProduct.sort((a, b) => {
+			const sortingProducts = (a, b) => {
+				if (sorting_value === "lowest-price") {
 					return a.price - b.price;
-				});
+				}
+
+				if (sorting_value === "highest-price") {
+					return b.price - a.price;
+				}
+
+				if (sorting_value === "a-z") {
+					return a.name.localeCompare(b.name)
+				}
+
+				if (sorting_value === "z-a") {
+					return b.name.localeCompare(a.name)
+				}
 			}
 
-			if (state.sorting_value === "highest-price") {
-				newSortData = tempSortProduct.sort((a, b) => {
-					return b.price - a.price;
-				});
-			}
+			const newSortData = tempSortProduct.sort(sortingProducts)
 
 			return {
 				...state,

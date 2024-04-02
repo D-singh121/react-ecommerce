@@ -29,13 +29,18 @@ export const FilterContextProvider = ({ children }) => {
 		return dispatch({ type: "SET_LIST_VIEW" })
 	}
 
+
+
 	//sorting selected sort option
-	const sorting = () => {
-		dispatch({ type: "GET_SORT_VALUE" })
+	const sorting = (event) => {
+		let userValue = event.target.value;
+		dispatch({ type: "GET_SORT_VALUE", payload: userValue })
 	}
+	//after getting sorting event value apply sorting products.
 	useEffect(() => {
 		dispatch({ type: "SORTING_PRODUCTS", payload: products })
 	}, [state.sorting_value]);
+
 
 
 
