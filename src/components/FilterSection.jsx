@@ -1,8 +1,14 @@
+import '../style/filterSectionaMain.scss';
+import { SearchFilterBox } from "./index.js";
 
 const FilterSection = () => {
   return (
-	<div>FilterSection</div>
+    <section>
+      <div className="search-container">
+        <SearchFilterBox />
+      </div>
+    </section>
   )
 }
 
-export default FilterSection
+export default FilterSection;
