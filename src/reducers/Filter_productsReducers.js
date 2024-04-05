@@ -33,65 +33,93 @@ const FilterProductsReducer = (state, action) => {
 
 		// all sort methods 
 		case "SORTING_PRODUCTS":
-			const { filter_products, sorting_value } = state; // destructering state.
-			let tempSortProduct = [...filter_products];  // shallow copy of filter_products
+			{
+				let newSortData;
+				const { filter_products, sorting_value } = state; // destructering state.
+				let tempSortProduct = [...filter_products];  // shallow copy of filter_products
 
-			const sortingProducts = (a, b) => {
-				if (sorting_value === "lowest-price") {
-					return a.price - b.price;
+				const sortingProducts = (a, b) => {
+					if (sorting_value === "lowest-price") {
+						return a.price - b.price;
+					}
+
+					if (sorting_value === "highest-price") {
+						return b.price - a.price;
+					}
+
+					if (sorting_value === "a-z") {
+						return a.name.localeCompare(b.name)
+					}
+
+					if (sorting_value === "z-a") {
+						return b.name.localeCompare(a.name)
+					}
 				}
 
-				if (sorting_value === "highest-price") {
-					return b.price - a.price;
+				newSortData = tempSortProduct.sort(sortingProducts)
+
+				return {
+					...state,
+					filter_products: newSortData,
 				}
 
-				if (sorting_value === "a-z") {
-					return a.name.localeCompare(b.name)
-				}
+			}
 
-				if (sorting_value === "z-a") {
-					return b.name.localeCompare(a.name)
+		case "UPDATE_FILTER_VALUE":
+			{
+				const { name, value } = action.payload;
+
+				return {
+					...state,
+					filters: {
+						...state.filters,
+						[name]: value,
+					}
 				}
 			}
 
-			const newSortData = tempSortProduct.sort(sortingProducts)
 
-			return {
-				...state,
-				filter_products: newSortData,
-			}
+		case "FILTER_PRODUCTS":
+
+			{
+				let { all_products } = state;
+				let tempFilterProduct = [...all_products];
+
+				const { searchText, category, company, color } = state.filters;
+
+				if (searchText) {
+					tempFilterProduct = tempFilterProduct.filter((curElem) => {
+						return curElem.name.toLowerCase().includes(searchText);
+					});
+				}
+
+
+				if (category !== "all") {
+					tempFilterProduct = tempFilterProduct.filter((curElem) =>
+						curElem.category === category);
+				}
 
 
 
-		case "UPDATE_SEARCH_FILTER_VALUE":
-			const { name, value } = action.payload;
 
-			return {
-				...state,
-				filters: {
-					...state.filters,
-					[name]: value,
+
+				if (company !== "all") {
+					tempFilterProduct = tempFilterProduct.filter((curElem) =>
+						curElem.company.toLowerCase() === company.toLowerCase());
+				}
+
+
+				if (color !== "all") {
+					tempFilterProduct = tempFilterProduct.filter((curElem) =>
+						curElem.colors.includes(color)
+					);
+				}
+
+				return {
+					...state,
+					filter_products: tempFilterProduct,
 				}
 			}
-
-
-		case "FILTER_SEARCH_PRODUCTS":
-			let { all_products } = state;
-			let tempSearchFilterProduct = [...all_products];
-
-			const { searchText } = state.filters;
-
-			if (searchText) {
-				tempSearchFilterProduct = tempSearchFilterProduct.filter((curElem) => {
-					return curElem.name.toLowerCase().includes(searchText);
-				});
-			}
-
-			return {
-				...state,
-				filter_products: tempSearchFilterProduct,
-			}
-
 		default:
 			return state;
 	}

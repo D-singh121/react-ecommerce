@@ -1,10 +1,11 @@
 
-const Button = ({ label, style, type, icons, ...props }) => {
+const Button = ({ label, style, type, icons, userClassname, ...props }) => {
 	return (
 		<button
 			type={type}
 			style={style}
 			icon={icons}
+			className={userClassname}
 			{...props}
 		>
 			{label}

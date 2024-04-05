@@ -1,0 +1,39 @@
+.filter-colors {
+	margin: 1rem 0;
+	margin-top: 1rem;
+
+	h4 {
+		margin-bottom: 0.5rem;
+	}
+
+	.filter-color-style {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		gap: 0.5rem;
+		margin-left: 0;
+
+
+		.colorFilterbtn {
+			width: 1.3rem;
+			height: 1.3rem;
+			border-radius: 50%;
+			border: none;
+			cursor: pointer;
+
+			.checkStyle {
+				font-size: 0.9rem;
+				color: blue;
+			}
+
+			&:hover {
+				// width: 1.6rem;
+				// height: 1.6rem;
+				border: 0.1px solid rgb(134, 124, 124);
+				transform: scale(1.3, 1.3);
+
+			}
+		}
+
+	}
+}

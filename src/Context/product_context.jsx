@@ -34,11 +34,11 @@ const AppProvider = ({ children }) => {
 			// console.log(products);
 
 			dispatch({ type: "API_DATA", payload: products })
-			dispatch({ type: "SET_LOADING" })
-			dispatch({ type: "SET_ERROR" })
+			// dispatch({ type: "SET_LOADING" })
+			// dispatch({ type: "SET_ERROR" })
 
 		} catch (error) {
-			dispatch({ type: "SET_LOADING" })
+			// dispatch({ type: "SET_LOADING" })
 			dispatch({ type: "SET_ERROR" })
 		}
 	}
@@ -51,11 +51,11 @@ const AppProvider = ({ children }) => {
 			const response = await axios.get(getUrl)
 			const singleProductData = await response.data
 			dispatch({ type: "SET_SINGLE_PRODUCT", payload: singleProductData })
-			dispatch({ type: "SET_SINGLE_PRODUCT_LOADING" })
-			dispatch({ type: "SET_SINGLE_PRODUCT_ERR" })
+			// dispatch({ type: "SET_SINGLE_PRODUCT_LOADING" })
+			// dispatch({ type: "SET_SINGLE_PRODUCT_ERR" })
 
 		} catch (error) {
-			dispatch({ type: "SET_SINGLE_PRODUCT_LOADING" })
+			// dispatch({ type: "SET_SINGLE_PRODUCT_LOADING" })
 			dispatch({ type: "SET_SINGLE_PRODUCT_ERR" })
 		}
 	}

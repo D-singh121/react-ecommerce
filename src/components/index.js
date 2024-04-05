@@ -22,13 +22,38 @@ import ListViewComp from "./ListViewComp.jsx";
 
 //filter section
 import SearchFilterBox from "./SearchFilterBox.jsx";
+import CategoryFilter from "./CategoryFilter.jsx"
+import CompanyFilter from './CompanyFilter';
+import ColorsFilter from "./ColorsFilter.jsx";
+import PriceFilter from "./PriceFilter.jsx";
 
 import Input from './Input';
 import Button from './Button';
 
 
 export {
-	Navbar, FeatureProducts, ProductCard, Footer, HeroSection, Services,
-	Trusted, Input, Button, PageNavigationBreadCrumbs, ProductDetailsImages, StarRating, AddToCart, CartQuantety
-	, FilterSection, ProductList, Product_Sort, GridViewComp, ListViewComp, SearchFilterBox
+	Navbar,
+	FeatureProducts,
+	ProductCard,
+	Footer,
+	HeroSection,
+	Services,
+	Trusted,
+	Input,
+	Button,
+	PageNavigationBreadCrumbs,
+	ProductDetailsImages,
+	StarRating,
+	AddToCart,
+	CartQuantety,
+	FilterSection,
+	ProductList,
+	Product_Sort,
+	GridViewComp,
+	ListViewComp,
+	SearchFilterBox,
+	CategoryFilter,
+	CompanyFilter,
+	ColorsFilter,
+	PriceFilter
 }

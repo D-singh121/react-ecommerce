@@ -6,15 +6,19 @@ import FilterProductReducer from '../reducers/Filter_productsReducers.js' // red
 const FilterContext = createContext(); //main filter context
 
 const initialState = {
-	all_products: [],
 	filter_products: [], // initially empty
+	all_products: [],
 	grid_view: true,
 	sorting_value: "lowest",
 
 	filters: {
 		searchText: "",
+		category: "all",
+		company: "all",
+		color: "all"
 	},
 }
+
 
 
 
@@ -46,17 +50,20 @@ export const FilterContextProvider = ({ children }) => {
 		let name = event.target.name
 		let value = event.target.value
 
-		return dispatch({ type: "UPDATE_SEARCH_FILTER_VALUE", payload: { name, value } });
+		return dispatch({ type: "UPDATE_FILTER_VALUE", payload: { name, value } });
 	}
 
 
 
 
 	useEffect(() => {
-		dispatch({ type: "LOAD_FILTER_PRODUCTS", payload: products });
-		dispatch({ type: "SORTING_PRODUCTS", payload: products });
-		dispatch({ type: "FILTER_SEARCH_PRODUCTS" })
+		dispatch({ type: "FILTER_PRODUCTS" });
+		dispatch({ type: "SORTING_PRODUCTS" });
 	}, [products, state.sorting_value, state.filters]);
+
+	useEffect(() => {
+		dispatch({ type: "LOAD_FILTER_PRODUCTS", payload: products });
+	}, [products])
 
 
 	return (
